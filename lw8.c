@@ -39,6 +39,12 @@ unsigned int options_Total = 0;
 unsigned int option_Input1;
 unsigned int option_Input2;
 
+unsigned int Option1 = 0;
+unsigned int Option2 = 0;
+unsigned int Option3 = 0;
+unsigned int Option4 = 0;
+
+
 // Sums to be returned from funcitons
 unsigned int baseSum = 0;
 unsigned int IPSum = 0;
@@ -116,6 +122,20 @@ unsigned int addOptions()
         scanf("%X", &option_Input2);
         printf("You entered %X \n", option_Input2);
         options_Total += ((option_Input1 << 8) + option_Input2);
+        if(i =6){
+            Option1 = ((option_Input1<<8) + option_Input2);
+
+        }else if(i == 7){
+             Option2 = ((option_Input1<<8) + option_Input2);
+
+        }else if(i == 8){
+             Option3 = ((option_Input1<<8) + option_Input2);
+            
+        } else if(i==9){
+             Option4 = ((option_Input1<<8) + option_Input2);
+
+        }
+
         printf("--------------------------------------------------\n");
     }
 
@@ -297,5 +317,20 @@ void IP_output()
 
 void Options_output()
 {
-    
+    if(Option1 != 0){
+        printf("%X \n", Option1);
+    }
+
+    if(Option2 != 0){
+        printf("%X \n", Option2);
+    }
+
+    if(Option3 != 0){
+        printf("%X \n", Option3);
+    }
+
+    if(Option4 != 0){
+        printf("%X \n", Option4);
+    }
+
 }

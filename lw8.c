@@ -56,7 +56,8 @@ unsigned int Calculated_Checksum = 0;
 unsigned int carry;
 
 // This is the max value that a 16 bit number can reach, FFFF
-unsigned int MAX = 65535;
+unsigned int MAX = 0xFFFF;
+unsigned int OverFlow = 0x10000;
 
 // The function that asks the user for the base and sums the values
 unsigned int addBaseIPV4();
@@ -86,8 +87,10 @@ int main()
     }
 
     // Carry calculation
-    if (Calculated_Checksum > MAX)
+    if (Calculated_Checksum >= OverFlow)
     {
+        // I think this is where I am going wrong
+        // My math seems off
         carry = Calculated_Checksum - MAX;
         Calculated_Checksum -= MAX;
         Calculated_Checksum += carry;
